@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +17,7 @@
 	<h2>
 		<span style="font-weight: bold;">Search</span>
 		<span style="background-color: black; color: white; font-weight: bold; padding: 5px; border-radius: 8%;">Engine</span> 
-		<img style="position: relative; top: -30px; left: -65px;" src="http://pngimg.com/uploads/book/book_PNG2109.png" width="100" />
+		<img style="position: relative; top: -30px; left: -65px;" src="{% static 'encyclopedia/images/book_PNG2109.png' %}" width="100" />
 	<h2>
 		
 	<form action="{% url 'encyclopedia:search' %}" method="POST"> 
