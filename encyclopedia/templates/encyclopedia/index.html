@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Search Engine</title>
+	<link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAACXiYYA9vTzAPnz8ADk4NwA5d7fALKcmgDn4NwA+fX2AOng3ADl4uIA3s/FAPz9/ACyioAA29TUAO7r6wDy7usAzsLDAKqYmABgTUsA7OHXANXLzADYyskA+vj3APn5+gC6nZUAxLi4ALShoQDn5uYA6ubmAN3PxgDt5uYA/v39AN3RzAB/aGUAyMC+ANC6tQDVvbUA8+3pAM3BwQDKp6EArJuZAMGurQDk3d4A08bHAMOysADCs7MA9/f1AMS3tgD7/PsA/fv4AMa4uQCfkY4AoY6OAPv9/gD9/f4AyL65ANrT0wC5paUAysC/AM7BwgD08e0Ab15bAPbz8wC/srEA6uPfAPv8/ACpioMAxbu6AODNwgD8/PwA/fz8ALSlpgDIu7oA///8AM66twDLvroA7+rrAN/T1ADv7u4A4tzdALmWjADp3toA9/f3AMa0rwDKtK8A2M3MAPv8/QDq5eYA/fz9AP/8/QDs6ekA3NbVAM6+uwDTvbgA9O/pAPPw7ACXg4IA8vLyAPTy8gD69fIA5+DhAPv59QD6+/sA+/v7AO3l3gDc0M0A/v77AKORkQDt6OcA29LTAP///gDv6+cA7u3tAN3W1gDz6+cA8O3tAK6TjgDOwr8A49nWAOXa0ADPxMUA0cTFAFxKRwDo3dkA6tzWAPj18wDUyMgA+Pb2AHlhXgDEtrcApomDANrMywD7+/wA8OPZALOmowD9+/wA+v//AN3PywDZ0dEA/P//AP///wDw6uUAuqipALCQjwDMxsMA9fHxANPDwwC4m5UA5ePjAPr6+gD7+voAxbm4AP79+gDIursA7OjpAKaPjQDu6+kA7uzsAO/s7ADz7+wAvbCwANbEvgDRx8cA+PPvAPb19QCuoJwAwrSzAMazsADW0NAA+v7+ANnQ0ADu5eEA/P7+AP79+wDr5+cA7efnAP7+/gD//v4AuaalALCLggDc1NMAzL6/AN/V1gDNwsIA8PDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYh5pSKUAPRJ6ITOGS3acfYyMiGcvgaaZIpePgKyMjIyMjJ0oNGsRoKqvDlFCaoyMjJaCmxqOjkc5LAgHo5OMjIyzdCkyJqJ4Oi2ney5yYLCpDCw7OE9klASotV2rAiOIBRh1thy4YZFwG21ciV98WVBUtJ4WRTaEUrgJFJJvjWUnoVcXjIyMjDB/Woq3rg8xJB0+i4yMjIyMlU5xeWw8SWcKY4uMjIyMjFhzDStvn1aMRF41jIyMjIwfTFUVJU2IjK0TpB+MjIyMZioQgyBBjIxFaIUBhzaxQZp+pkoLjIyMjIyMdwZAA1uQU7KYjIyMjIyMjG6tGUM/N0aLi4yMjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="container-fluid" style="text-align: center; margin-top: 3%;">
+		
+		<div class="container">
+			<img src="http://jutq.utq.edu.iq/images/%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%AF%D8%A7%D8%AA/page.gif" />
+		</div>
+		<h2>
+			<span style="font-weight: bold;">Search</span>
+			<span style="background-color: black; color: white; font-weight: bold; padding: 5px; border-radius: 8%;">Engine</span> 
+		<h2>
+		
+		<form action="{% url 'encyclopedia:search' %}" method="POST"> 
+		{% csrf_token %}
+			<input type="text" name="contentSearch" value="" style="vertical-align: middle; width: 290px; outline-color: red; font-size: 0.5em; padding: 8px 0;" />
+			<button class="btn btn-danger" type="submit" style="padding: 10px 15px;" style="vertical-align: middle;" ><span class="glyphicon glyphicon-search"></span> Search</button>
+		</form>
+		
+</body>
+
+</html>
+
