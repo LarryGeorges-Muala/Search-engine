@@ -1,62 +1,449 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title>Search Results | Search Engine</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAACXiYYA9vTzAPnz8ADk4NwA5d7fALKcmgDn4NwA+fX2AOng3ADl4uIA3s/FAPz9/ACyioAA29TUAO7r6wDy7usAzsLDAKqYmABgTUsA7OHXANXLzADYyskA+vj3APn5+gC6nZUAxLi4ALShoQDn5uYA6ubmAN3PxgDt5uYA/v39AN3RzAB/aGUAyMC+ANC6tQDVvbUA8+3pAM3BwQDKp6EArJuZAMGurQDk3d4A08bHAMOysADCs7MA9/f1AMS3tgD7/PsA/fv4AMa4uQCfkY4AoY6OAPv9/gD9/f4AyL65ANrT0wC5paUAysC/AM7BwgD08e0Ab15bAPbz8wC/srEA6uPfAPv8/ACpioMAxbu6AODNwgD8/PwA/fz8ALSlpgDIu7oA///8AM66twDLvroA7+rrAN/T1ADv7u4A4tzdALmWjADp3toA9/f3AMa0rwDKtK8A2M3MAPv8/QDq5eYA/fz9AP/8/QDs6ekA3NbVAM6+uwDTvbgA9O/pAPPw7ACXg4IA8vLyAPTy8gD69fIA5+DhAPv59QD6+/sA+/v7AO3l3gDc0M0A/v77AKORkQDt6OcA29LTAP///gDv6+cA7u3tAN3W1gDz6+cA8O3tAK6TjgDOwr8A49nWAOXa0ADPxMUA0cTFAFxKRwDo3dkA6tzWAPj18wDUyMgA+Pb2AHlhXgDEtrcApomDANrMywD7+/wA8OPZALOmowD9+/wA+v//AN3PywDZ0dEA/P//AP///wDw6uUAuqipALCQjwDMxsMA9fHxANPDwwC4m5UA5ePjAPr6+gD7+voAxbm4AP79+gDIursA7OjpAKaPjQDu6+kA7uzsAO/s7ADz7+wAvbCwANbEvgDRx8cA+PPvAPb19QCuoJwAwrSzAMazsADW0NAA+v7+ANnQ0ADu5eEA/P7+AP79+wDr5+cA7efnAP7+/gD//v4AuaalALCLggDc1NMAzL6/AN/V1gDNwsIA8PDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYh5pSKUAPRJ6ITOGS3acfYyMiGcvgaaZIpePgKyMjIyMjJ0oNGsRoKqvDlFCaoyMjJaCmxqOjkc5LAgHo5OMjIyzdCkyJqJ4Oi2ney5yYLCpDCw7OE9klASotV2rAiOIBRh1thy4YZFwG21ciV98WVBUtJ4WRTaEUrgJFJJvjWUnoVcXjIyMjDB/Woq3rg8xJB0+i4yMjIyMlU5xeWw8SWcKY4uMjIyMjFhzDStvn1aMRF41jIyMjIwfTFUVJU2IjK0TpB+MjIyMZioQgyBBjIxFaIUBhzaxQZp+pkoLjIyMjIyMdwZAA1uQU7KYjIyMjIyMjG6tGUM/N0aLi4yMjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'encyclopedia/images/favicon.png' %}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<div class="container-fluid" style="text-align: center; margin-top: 2%;">
+<div class="container-fluid" style="margin: 1%; padding: 3% 1% 5% 1%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		<style>@media screen and (max-width: 350px){ .top-book-section{margin-top: 15% !important;} .top-book-image{top: -72px !important; left: 102px !important;}}</style>
+	<div class="top-book-section" style="text-align: center; margin-top: 2%;">
+		<h2>
+			<span style="font-weight: bold;">Search</span>
+			<span style="background-color: black; color: white; font-weight: bold; padding: 5px; border-radius: 8%;">Engine</span> 
+			<img class="top-book-image" style="width: 100px; position: relative; top: -30px; left: -65px;" src="{% static 'encyclopedia/images/book_search.png' %}" />
+		</h2>
+			
+		<form action="{% url 'encyclopedia:search' %}" method="GET">
+			<input type="text" name="contentSearch" id="contentSearch" style="border-radius: 3px; vertical-align: middle; width: 290px; outline-color: red; font-size: 1em; padding: 8px 2px; margin-right: -20px;" onclick="successEntry()" onmouseout="successEntry()" onchange="successEntry()" onkeyup="successEntry()" />
+			<i id="research-spinner" class="fa fa-spinner fa-spin" style="visibility: hidden; position: relative; left: -15px; top: 3px; font-size: 20px; color: orangered;"></i>
+			<button id="not-ready-to-submit" class="btn btn-danger" type="button" style="cursor: default; padding: 10px 15px; vertical-align: middle; background-color: rgba(217, 83, 79, .5); border: 1px solid rgba(217, 83, 79, .5); outline-color: rgba(217, 83, 79, .5);" ><span class="glyphicon glyphicon-search"></span> Search</button>
+			<!--<button id="ready-to-submit" class="btn btn-danger" type="button" onclick="send_to_ajax()" style="display: none; padding: 10px 15px; vertical-align: middle; outline-color: rgba(217, 83, 79, 1);" ><span class="glyphicon glyphicon-search"></span> Search</button>-->
+			<button id="ready-to-submit" class="btn btn-danger" type="submit" style="display: none; padding: 10px 15px; vertical-align: middle; outline-color: rgba(217, 83, 79, 1);" ><span class="glyphicon glyphicon-search"></span> Search</button>
+		</form>
+		<br />
+	</div>
 
-	<h2>
-		<span style="font-weight: bold;">Search</span>
-		<span style="background-color: black; color: white; font-weight: bold; padding: 5px; border-radius: 8%;">Engine</span> 
-		<img style="position: relative; top: -30px; left: -65px;" src="{% static 'encyclopedia/images/book_PNG2109.png' %}" width="100" />
-	<h2>
-		
-	<form action="{% url 'encyclopedia:search' %}" method="POST"> 
-	{% csrf_token %}
-	
-		<input type="text" name="contentSearch" value="" style="vertical-align: middle; width: 290px; outline-color: red; font-size: 0.5em; padding: 8px 0;" />
-		<button class="btn btn-danger" type="submit" style="padding: 10px 15px;" style="vertical-align: middle;" ><span class="glyphicon glyphicon-search"></span> Search</button>
+	<div>
+		<p id="item-searched-display" style="margin-left: 1%; display: none;">
+			<span class="glyphicon glyphicon-asterisk"></span>You searched for <span id="searched-for-tag" style="font-weight: bold; font-size: 1.3em;">"{{ research_item }}"</span>
+		</p> 
+		<button id="speech-reader" style="display: none; float: right; border: 1px solid brown; outline-color: brown; background-color: white; padding: 5px; border-radius: 5px 5px 0 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" onclick='textToSpeech()' onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
+		<br />
+		<style>.search-reference{font-weight: 600; font-size: 0.7em;} .search-wolfram{color: #c9c9c9;} .search-wiki{color: #c9c9c9;} .search-reference-break{display: none;} .search-reference-dot{margin-right: 5px;} @media screen and (max-width: 900px){.search-reference-break{display: block;}}</style>
+		<style>.youtube-search-container{display: none; padding: 1%;} .youtube-search-span-two{background-color: red; color: white; font-weight: bold; padding: 5px; border-radius: 15%;}</style>
+		<style>@media screen and (max-width: 350px){ #youtube-search-frame{margin-left: 0 !important;}}</style>
+		<div style="width: 100%; margin-bottom: 100px; border: 1px solid brown; border-radius: 7px 7px 5px 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		<noscript><p style="padding: 3% 1% 0 1%; text-align: center;">Please enable Javascript on your browser to fully utilize this search engine.</p></noscript>
+		<p id="result-not-found" style="padding: 1%; display: none;"><i>No result found...</i></p>
+		<p id="result-collins" style="padding: 0 1%;"></p>
+		<p id="result" style="padding: 1%;"></p>
+		<p id="result-wiki" style="padding: 0 1%;"></p>
+		<!--
+		<p id="result-youtube" class="youtube-search-container">
+			<span class="search-reference-dot">•</span>
+			<button title="View result from Youtube" id="youtube-search-button" onclick="display_youtube_frame_container()" class="btn btn-default youtube-search-button" style="font-weight: 700; outline-color: red; font-size: 9px;">
+				<span class="youtube-search-span-one">You</span><span class="youtube-search-span-two">Tube</span>
+			</button>
+			<div id="youtube-search-frame-container" style="display: none; padding: 0% 1% 1% 2%;">
+			<iframe id="youtube-search-frame" style="border: 1px solid #f8f8f8; padding: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" 
+			webkitallowfullscreen mozallowfullscreen allowfullscreen>
+			</iframe>
+			</div>
+		</p>
+		-->
+		<p id="result-webster" style="padding: 0 1%;"></p>
+		<p id="result-oxford" style="padding: 0 1%;"></p>
 
-	</form>
-	<br />
-</div>
 
-<div class="container-fluid">
-	<p style="margin-left: 1%;"><span class="glyphicon glyphicon-asterisk"></span>You searched for <span style="font-weight: bold; font-size: 1.3em;">"{{ value_searched_on_engine }}"</span></p> <button id="speech-reader" style="float: right; border: 1px solid brown; background-color: white; padding: 5px; border-radius: 5px 5px 0 5px;" onclick='textToSpeech()' onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
-	<br />
-	
-	<div style="width: 100%; border: 1px solid brown; border-radius: 7px;">
-      <p id="result" style="padding: 1%;">
-			{{ search_result }}
-	  </p>
-	  <span class="glyphicon glyphicon-fire" style="color: brown; padding-left: 1%; padding-bottom: 1%;"></span>
-    </div>
+		<!-- new block -->
+		<style>	
+			.new-block-container{
+				/*display: inline-block;*/
+				display: none;
+				width: 300px; 
+				height: 220px; 
+				padding: 2%; 
+				margin: 0 1% 2% 1%; 
+				background-color: rgba(255, 255, 255, .8); 
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				vertical-align: top;
+				-webkit-transition: height 2s;
+				transition: height 2s;
+			}
+			.libraries-icons{
+				width: 75px;
+				height: 75px;
+				background-color: white;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				border: 1px solid #d9d9d9;
+			}
+			.search-result-preview{
+				white-space: nowrap; 
+				width: 250px; 
+				overflow: hidden; 
+				text-overflow: ellipsis;
+				-webkit-transition: white-space 2s;
+				transition: white-space 2s;
+			}
+			.read-button-container{
+				width: 100%; 
+				text-align: right; 
+				margin-top: -40px;
+			}
+			.read-button{
+				display: none;
+				border: 1px solid darkgray; 
+				outline-color: brown; 
+				background-color: white; 
+				padding: 5px; 
+				border-radius: 5px 5px 5px 0; 
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			@media screen and (max-width: 900px){
+				.new-block-container{
+					margin: 0 1% 25% 1%;
+				}
+				.search-result-preview{
+					background-color: transparent;
+				}
+			}
+		</style>
+		<script>
+			function toggle_read_mode(x, y, z, w, a, b, c, d){
+				document.getElementById(x).style.height = y;
+				document.getElementById(z).style.whiteSpace = w;
+				document.getElementById(a).style.display = b;
+				document.getElementById(c).style.display = d;
+			}
+			function custom_speech_validator(q){
+				if(q){return q + ' ';} else {return ' ';}
+			}
+			function customTextToSpeech(x, y){
+				document.getElementById(x).style.backgroundColor = "brown";
+				document.getElementById(x).style.color = "white";
+				var text_result = custom_speech_validator(document.getElementById(y).innerText);
+				responsiveVoice.speak(text_result);
+				setInterval(function(){ document.getElementById(x).style.backgroundColor = "white"; document.getElementById(x).style.color = "black"; }, 5000);
+			}
+		</script>
+		<div style="width: 100%; text-align: center;">
+			<!-- Collins -->
+			<div id="resource-block-collins" class="new-block-container">
+				<div class="read-button-container">
+					<button id="speech-reader-collins" class="read-button" onclick="customTextToSpeech('speech-reader-collins', 'resource-block-collins-result')" onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
+				</div>
+				<div style="width: 100%; text-align: center;">
+					<img class="libraries-icons" title="Collins Dictionary Scrapper" src="{% static 'encyclopedia/images/collins.png' %}" />
+				</div>
+				<br>
+				<p id="resource-block-collins-result" class="search-result-preview"></p>
+				<br>
+				<div id="resource-block-collins-result-read-buttons" style="width: 100%; text-align: center;">
+					<button id="resource-block-collins-view-more" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-collins', 'auto', 'resource-block-collins-result', 'normal', 'resource-block-collins-view-more', 'none', 'resource-block-collins-view-less', 'inline-block');">View more</button>
+					<button id="resource-block-collins-view-less" style="display: none;" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-collins', '220px', 'resource-block-collins-result', 'nowrap', 'resource-block-collins-view-more', 'inline-block', 'resource-block-collins-view-less', 'none');">View less</button>
+				</div>
+			</div>
+			<!-- Wolfram -->
+			<div id="resource-block-wolfram" class="new-block-container">
+				<div class="read-button-container">
+					<button id="speech-reader-wolfram" class="read-button" onclick="customTextToSpeech('speech-reader-wolfram', 'resource-block-wolfram-result')" onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
+				</div>
+				<div style="width: 100%; text-align: center;">
+					<img class="libraries-icons" title="Wolfram Alpha Api" src="{% static 'encyclopedia/images/Wolfram-clean-compressor.png' %}" />
+				</div>
+				<br>
+				<p id="resource-block-wolfram-result" class="search-result-preview"></p>
+				<br>
+				<div id="resource-block-wolfram-result-read-buttons" style="width: 100%; text-align: center;">
+					<button id="resource-block-wolfram-view-more" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-wolfram', 'auto', 'resource-block-wolfram-result', 'normal', 'resource-block-wolfram-view-more', 'none', 'resource-block-wolfram-view-less', 'inline-block');">View more</button>
+					<button id="resource-block-wolfram-view-less" style="display: none;" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-wolfram', '220px', 'resource-block-wolfram-result', 'nowrap', 'resource-block-wolfram-view-more', 'inline-block', 'resource-block-wolfram-view-less', 'none');">View less</button>
+				</div>
+			</div>
+			<!-- Wikipedia -->
+			<div id="resource-block-wikipedia" class="new-block-container">
+				<div class="read-button-container">
+					<button id="speech-reader-wikipedia" class="read-button" onclick="customTextToSpeech('speech-reader-wikipedia', 'resource-block-wikipedia-result')" onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
+				</div>
+				<div style="width: 100%; text-align: center;">
+					<img class="libraries-icons" title="Wikipedia Api" src="{% static 'encyclopedia/images/Wikipedia-compressor.png' %}" />
+				</div>
+				<br>
+				<p id="resource-block-wikipedia-result" class="search-result-preview"></p>
+				<br>
+				<div id="resource-block-wikipedia-result-read-buttons" style="width: 100%; text-align: center;">
+					<button id="resource-block-wikipedia-view-more" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-wikipedia', 'auto', 'resource-block-wikipedia-result', 'normal', 'resource-block-wikipedia-view-more', 'none', 'resource-block-wikipedia-view-less', 'inline-block');">View more</button>
+					<button id="resource-block-wikipedia-view-less" style="display: none;" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-wikipedia', '220px', 'resource-block-wikipedia-result', 'nowrap', 'resource-block-wikipedia-view-more', 'inline-block', 'resource-block-wikipedia-view-less', 'none');">View less</button>
+				</div>
+			</div>
+			<!-- Youtube -->
+			<div id="resource-block-youtube" class="new-block-container">
+				<div style="width: 100%; text-align: center;">
+					<img class="libraries-icons" title="Youtube Feed Scrapper" src="{% static 'encyclopedia/images/youtube.png' %}" />
+				</div>
+				<br>
+				<div id="youtube-search-frame-container" style="display: none; padding: 0% 1% 1% 2%;">
+					<iframe id="youtube-search-frame" style="display: none; width: 280px; margin-left: -20px; border: 1px solid #f8f8f8; padding: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" 
+					webkitallowfullscreen mozallowfullscreen allowfullscreen>
+					</iframe>
+				</div>
+				<br>
+				<button id="youtube-search-button" onclick="display_youtube_frame_container()" class="btn btn-default" type="button">View Video</button>
+			</div>
+			<!-- Webster -->
+			<div id="resource-block-webster" class="new-block-container">
+				<div class="read-button-container">
+					<button id="speech-reader-webster" class="read-button" onclick="customTextToSpeech('speech-reader-webster', 'resource-block-webster-result')" onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
+				</div>
+				<div style="width: 100%; text-align: center;">
+					<img class="libraries-icons" title="Mariam Webster Dictionary Scrapper" src="{% static 'encyclopedia/images/m-webster.png' %}" />
+				</div>
+				<br>
+				<p id="resource-block-webster-result" class="search-result-preview"></p>
+				<br>
+				<div id="resource-block-webster-result-read-buttons" style="width: 100%; text-align: center;">
+					<button id="resource-block-webster-view-more" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-webster', 'auto', 'resource-block-webster-result', 'normal', 'resource-block-webster-view-more', 'none', 'resource-block-webster-view-less', 'inline-block');">View more</button>
+					<button id="resource-block-webster-view-less" style="display: none;" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-webster', '220px', 'resource-block-webster-result', 'nowrap', 'resource-block-webster-view-more', 'inline-block', 'resource-block-webster-view-less', 'none');">View less</button>
+				</div>
+			</div>
+			<!-- Oxford -->
+			<div id="resource-block-oxford" class="new-block-container">
+				<div class="read-button-container">
+					<button id="speech-reader-oxford" class="read-button" onclick="customTextToSpeech('speech-reader-oxford', 'resource-block-oxford-result')" onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
+				</div>
+				<div style="width: 100%; text-align: center;">
+					<img class="libraries-icons" title="Oxford Dictionary Scrapper" src="{% static 'encyclopedia/images/oxford-2.jpg' %}" />
+				</div>
+				<br>
+				<p id="resource-block-oxford-result" class="search-result-preview"></p>
+				<br>
+				<div id="resource-block-oxford-result-read-buttons" style="width: 100%; text-align: center;">
+					<button id="resource-block-oxford-view-more" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-oxford', 'auto', 'resource-block-oxford-result', 'normal', 'resource-block-oxford-view-more', 'none', 'resource-block-oxford-view-less', 'inline-block');">View more</button>
+					<button id="resource-block-oxford-view-less" style="display: none;" class="btn btn-default" type="button" onclick="toggle_read_mode('resource-block-oxford', '220px', 'resource-block-oxford-result', 'nowrap', 'resource-block-oxford-view-more', 'inline-block', 'resource-block-oxford-view-less', 'none');">View less</button>
+				</div>
+			</div>
+		</div>
+				
+		<!-- end new block -->
+		<div id="result-spinner" style="display: none; text-align: center; width: 100%;"><i class="fa fa-spinner fa-spin" style="/*visibility: hidden;*/ font-size: 40px; color: brown;"></i></div>
+		<span class="glyphicon glyphicon-fire" style="color: brown; padding-left: 1%; padding-bottom: 1%;"></span>
+		</div>
 
-</div>
+	</div>
+<div>
 
 <script>
-function textToSpeech(){
+var result_signature = '<span class="search-reference-dot">•</span> ';
+var collins_signature = ' <span class="search-reference search-wolfram"><br class="search-reference-break">(from Collins)</span>';
+var wolfram_signature = ' <span class="search-reference search-wolfram"><br class="search-reference-break">(from WolfRamAlpha)</span>';
+var webster_signature = ' <span class="search-reference search-wolfram"><br class="search-reference-break">(from Merriam Webster)</span>';
+var oxford_signature = ' <span class="search-reference search-wolfram"><br class="search-reference-break">(from Oxford)</span>';
+var wiki_signature = ' <span class="search-reference search-wiki"><br class="search-reference-break">(from Wikipedia)</span>';
 
-	document.getElementById("speech-reader").style.backgroundColor = "brown";
-	document.getElementById("speech-reader").style.color = "white";
+function display_item_searched_display(){
+	$('#item-searched-display').fadeIn();
+}
+function display_search_reader(){
+	$('#speech-reader').fadeIn();
+}
+function hide_search_reader(){
+	$('#speech-reader').fadeOut();
+}
+function display_custom_search_reader(x){
+	$('#' + x).fadeIn();
+}
+function read_button_statement(x, y, z){
+	if (document.getElementById("resource-block-" + z + "-result").style.fontWeight == 500){
+		//
+	} else{
+		if (x.length < y){
+			document.getElementById("resource-block-" + z + "-result-read-buttons").style.display = 'none';
+		}	
+	}
+}
+function toggle_read_more_button(x){
+	var passed_text = document.getElementById("resource-block-" + x + "-result").innerText;
+	alert(passed_text);
+	alert(passed_text.length);
 
-	var text_result = document.getElementById("result").innerText;
-
-	responsiveVoice.speak(text_result);
-
-	setInterval(function(){ document.getElementById("speech-reader").style.backgroundColor = "white"; document.getElementById("speech-reader").style.color = "black"; }, 5000);
-
+	switch (x) {
+		case 'collins':
+			read_button_statement(passed_text, 47, x);
+			break;
+		case 'wolfram':
+		read_button_statement(passed_text, 45, x);
+			break;
+		case 'wikipedia':
+		read_button_statement(passed_text, 46, x);
+			break;
+		case 'webster':
+		read_button_statement(passed_text, 44, x);
+			break;
+		case 'oxford':
+		read_button_statement(passed_text, 46, x);
+			break;
+	}
+}
+function hide_custom_search_reader(a,b,c,d,e){
+	$('#' + a).fadeOut();
+	$('#' + b).fadeOut();
+	$('#' + c).fadeOut();
+	$('#' + d).fadeOut();
+	$('#' + e).fadeOut();
+}
+function display_value_not_found(x){
+	document.getElementById("result-not-found").style.display = x;
+}
+function display_youtube_button(x){
+	document.getElementById("youtube-search-frame-container").style.display = x;
+}
+function display_youtube_frame_container(){
+	$('#youtube-search-button').fadeOut();
+	//$('#youtube-search-frame-container').slideDown();
+	$('#youtube-search-frame').slideDown();
+}
+function hide_youtube_frame_container(){
+	$('#youtube-search-button').fadeIn();
+	//$('#youtube-search-frame-container').slideUp();
+	$('#youtube-search-frame').slideUp();
+}
+function load_youtube_frame_link(x){
+	document.getElementById("youtube-search-frame").src="https://www.youtube.com/embed/" + x + "?autoplay=0";
 }
 </script>
+
+<script>
+function toggle_spinner(x){
+	document.getElementById("research-spinner").style.visibility = x;
+}
+function result_spinner(x){
+	document.getElementById("result-spinner").style.display = x;
+}
+function clear_search_result(){
+	display_value_not_found("none");
+	document.getElementById("result").innerHTML = '';
+	document.getElementById("result-wiki").innerHTML = '';
+	document.getElementById("result-collins").innerHTML = '';
+	document.getElementById("result-webster").innerHTML = '';
+	hide_youtube_frame_container();
+	display_youtube_button("none");
+}
+function clear_custom_search_result(){
+	display_value_not_found("none");
+	document.getElementById("resource-block-collins").style.display = 'none';
+	document.getElementById("resource-block-collins-result").innerHTML = '';
+	document.getElementById("resource-block-wolfram").style.display = 'none';
+	document.getElementById("resource-block-wolfram-result").innerHTML = '';
+	document.getElementById("resource-block-wikipedia").style.display = 'none';
+	document.getElementById("resource-block-wikipedia-result").innerHTML = '';
+	document.getElementById("resource-block-webster").style.display = 'none';
+	document.getElementById("resource-block-webster-result").innerHTML = '';
+	document.getElementById("resource-block-oxford").style.display = 'none';
+	document.getElementById("resource-block-oxford-result").innerHTML = '';
+	document.getElementById("resource-block-youtube").style.display = 'none';
+	hide_youtube_frame_container();
+	display_youtube_button("none");
+}
+function write_search_result(x, v, y, z, u, w, t){
+	display_item_searched_display();
+	document.getElementById("searched-for-tag").innerHTML = '"' + x + '"';
+
+	if(y || z || u || v || w || t){
+		display_value_not_found("none");
+		if(v){document.getElementById("resource-block-collins-result").innerHTML = result_signature + v + collins_signature; document.getElementById("resource-block-collins").style.display = "inline-block"; display_custom_search_reader("speech-reader-collins");}
+		if(y){document.getElementById("resource-block-wolfram-result").innerHTML = result_signature + y + wolfram_signature; document.getElementById("resource-block-wolfram").style.display = "inline-block"; display_custom_search_reader("speech-reader-wolfram");}
+		if(z){document.getElementById("resource-block-wikipedia-result").innerHTML = result_signature + z + wiki_signature; document.getElementById("resource-block-wikipedia").style.display = "inline-block"; display_custom_search_reader("speech-reader-wikipedia");}
+		if(u){ load_youtube_frame_link(u); document.getElementById("resource-block-youtube").style.display = "inline-block"; display_youtube_button("block");}
+		if(w){document.getElementById("resource-block-webster-result").innerHTML = result_signature + w + webster_signature; document.getElementById("resource-block-webster").style.display = "inline-block"; display_custom_search_reader("speech-reader-webster");}
+		if(t){document.getElementById("resource-block-oxford-result").innerHTML = result_signature + t + oxford_signature; document.getElementById("resource-block-oxford").style.display = "inline-block"; display_custom_search_reader("speech-reader-oxford");}
+		//display_search_reader();
+	} else {
+		//hide_search_reader();
+		hide_custom_search_reader("speech-reader-collins", "speech-reader-wolfram", "speech-reader-wikipedia", "speech-reader-webster", "speech-reader-oxford");
+		//clear_search_result();
+		clear_custom_search_result();
+		display_value_not_found("block");
+	}
+}
+function error_fetching_result(){
+	/*
+	result_spinner("none");
+	toggle_spinner("hidden");
+	document.getElementById("result").innerHTML = 'Result not found... Please try again.';
+	*/
+}
+function speech_validator(q){
+	if(q){return q + ' ';} else {return ' ';}
+}
+function textToSpeech(){
+	document.getElementById("speech-reader").style.backgroundColor = "brown";
+	document.getElementById("speech-reader").style.color = "white";
+	var text_result = speech_validator(document.getElementById("result-collins").innerText) + speech_validator(document.getElementById("result").innerText) + speech_validator(document.getElementById("result-wiki").innerText + speech_validator(document.getElementById("result-webster").innerText) + speech_validator(document.getElementById("result-oxford").innerText));
+	responsiveVoice.speak(text_result);
+	setInterval(function(){ document.getElementById("speech-reader").style.backgroundColor = "white"; document.getElementById("speech-reader").style.color = "black"; }, 5000);
+}
+</script>
+
+<script>
+function send_to_ajax(){
+	toggle_spinner("visible");
+	clear_search_result();
+	result_spinner("block");
+	var researcher = document.getElementById('contentSearch').value;
+	$.ajax({
+	url: '/ajax/researcher/',
+	data: {'researcher': researcher	},
+	dataType: 'json',
+	success: function (data) {
+		if (data.is_taken) {
+			result_spinner("none");			
+			write_search_result(data.searched_for, data.search_result_collins, data.search_result_wolfram, data.search_result_wiki, data.search_result_youtube, data.search_result_webster, data.search_result_oxford);
+			toggle_spinner("hidden");
+		}
+	},
+	error: error_fetching_result(),
+	timeout: 4000
+	});
+}
+</script>
+
+<script>
+function successEntry(){
+	if ($("#contentSearch").val() == null || $("#contentSearch").val() == ""){
+		document.getElementById("not-ready-to-submit").style.display = "inline-block";
+		document.getElementById("ready-to-submit").style.display = "none";
+	} else {
+		document.getElementById("not-ready-to-submit").style.display = "none";
+		document.getElementById("ready-to-submit").style.display = "inline-block";
+	}
+}
+</script>
+
+<script>
+{% if research_item %}
+display_item_searched_display();
+
+{% if search_result_wolfram or search_result_wiki or search_result_youtube or search_result_collins or search_result_webster or search_result_oxford %}
+write_search_result("{{research_item}}", "{{search_result_collins}}", "{{search_result_wolfram}}", '{{search_result_wiki}}', "{{search_result_youtube}}", "{{search_result_webster}}", "{{search_result_oxford}}");
+{% else %}
+display_value_not_found("block");
+{% endif %}
+
+{% else %}
+display_value_not_found("block");
+{% endif %}
+</script>
+
 </body>
 
 </html>
