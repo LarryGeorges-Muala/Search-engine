@@ -156,7 +156,7 @@ def generate_oxford_result(research_item):
 
 
 def test_stuff(search_result_wolfram, search_result_wiki, search_result_youtube, search_result_collins, search_result_webster, search_result_oxford):
-	test_mode = True
+	test_mode = False
 	if test_mode:
 		search_result_wolfram = 'Result from Wolf'
 		search_result_wiki = 'Result from Wiki'
