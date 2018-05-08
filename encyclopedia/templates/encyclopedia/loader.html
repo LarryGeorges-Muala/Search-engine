@@ -1,0 +1,26 @@
+{% load static %}
+
+<style>
+.search-loader-overlay{z-index: 1; opacity: 0; -webkit-transition: opacity 1s; transition: opacity 1s;}
+.search-loader-container{z-index: 1; top: 30%; width: 96%; opacity: 0; -webkit-transition: opacity 1s; transition: opacity 1s;}
+.search-loader-image{z-index: 1; width: 400px;}
+@media screen and (max-width: 900px){ 
+    .search-loader-container{width: 90%;}
+}
+@media screen and (max-width: 399px){ 
+    .search-loader-container{top: 22%;}
+    .search-loader-image{width: 293px;}
+}
+</style>
+<script>
+function display_search_loader(){
+    document.getElementById('search-loader-overlay').style.display = 'block';
+    document.getElementById('search-loader-overlay').style.opacity = '1';
+    document.getElementById('search-loader-container').style.display = 'block';
+    document.getElementById('search-loader-container').style.opacity = '1';
+}
+</script>
+<div class="search-loader-overlay" id="search-loader-overlay" style="display: none; position: fixed; width: 100%; height: 100%; top: 0; bottom: 0; right: 0; left: 0; background-color: rgba(0, 0, 0, .4);"></div>
+<div class="search-loader-container" id="search-loader-container" style="display: none; position: fixed; text-align: center;">
+    <img src="{% static 'encyclopedia/images/loader-resized-compressor.gif' %}" class="search-loader-image" style="background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+</div>

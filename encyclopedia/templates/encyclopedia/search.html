@@ -24,12 +24,13 @@
 			<img class="top-book-image" style="width: 100px; position: relative; top: -30px; left: -65px;" src="{% static 'encyclopedia/images/book_search.png' %}" />
 		</h2>
 			
-		<form action="{% url 'encyclopedia:search' %}" method="GET">
+		<form action="{% url 'encyclopedia:search' %}" method="GET" onsubmit="display_search_loader()">
 			<input type="text" name="contentSearch" id="contentSearch" style="border-radius: 3px; vertical-align: middle; width: 290px; outline-color: red; font-size: 1em; padding: 8px 2px; margin-right: -20px;" onclick="successEntry()" onmouseout="successEntry()" onchange="successEntry()" onkeyup="successEntry()" />
 			<i id="research-spinner" class="fa fa-spinner fa-spin" style="visibility: hidden; position: relative; left: -15px; top: 3px; font-size: 20px; color: orangered;"></i>
 			<button id="not-ready-to-submit" class="btn btn-danger" type="button" style="cursor: default; padding: 10px 15px; vertical-align: middle; background-color: rgba(217, 83, 79, .5); border: 1px solid rgba(217, 83, 79, .5); outline-color: rgba(217, 83, 79, .5);" ><span class="glyphicon glyphicon-search"></span> Search</button>
 			<!--<button id="ready-to-submit" class="btn btn-danger" type="button" onclick="send_to_ajax()" style="display: none; padding: 10px 15px; vertical-align: middle; outline-color: rgba(217, 83, 79, 1);" ><span class="glyphicon glyphicon-search"></span> Search</button>-->
 			<button id="ready-to-submit" class="btn btn-danger" type="submit" style="display: none; padding: 10px 15px; vertical-align: middle; outline-color: rgba(217, 83, 79, 1);" ><span class="glyphicon glyphicon-search"></span> Search</button>
+			{% include 'encyclopedia/loader.html' %}
 		</form>
 		<br />
 	</div>
@@ -100,7 +101,9 @@
 				width: 100%; 
 				text-align: right; 
 				margin-top: -40px;
+				z-index: 0;
 			}
+			.read-button-glyphs{z-index: 0;}
 			.read-button{
 				display: none;
 				border: 1px solid darkgray; 
@@ -109,6 +112,7 @@
 				padding: 5px; 
 				border-radius: 5px 5px 5px 0; 
 				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				z-index: 0;
 			}
 			@media screen and (max-width: 900px){
 				.new-block-container{
@@ -141,7 +145,7 @@
 			<!-- Collins -->
 			<div id="resource-block-collins" class="new-block-container">
 				<div class="read-button-container">
-					<button id="speech-reader-collins" class="read-button" onclick="customTextToSpeech('speech-reader-collins', 'resource-block-collins-result')" onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle"></span> Read <span class="glyphicon glyphicon-signal"></span></button>
+					<button id="speech-reader-collins" class="read-button" onclick="customTextToSpeech('speech-reader-collins', 'resource-block-collins-result')" onmouseover='this.style.transform="translateY(4px)"'  onmouseout='this.style.transform="none"'><span class="glyphicon glyphicon-play-circle read-button-glyphs"></span> Read <span class="glyphicon glyphicon-signal read-button-glyphs"></span></button>
 				</div>
 				<div style="width: 100%; text-align: center;">
 					<img class="libraries-icons" title="Collins Dictionary Scrapper" src="{% static 'encyclopedia/images/collins.png' %}" />

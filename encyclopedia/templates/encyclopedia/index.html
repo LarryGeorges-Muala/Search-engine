@@ -24,12 +24,12 @@
 			<span style="background-color: black; color: white; font-weight: bold; padding: 5px; border-radius: 8%;">Engine</span> 
 		</h2>
 		
-		<form action="{% url 'encyclopedia:search' %}" method="GET">
+		<form action="{% url 'encyclopedia:search' %}" method="GET" onsubmit="display_search_loader()">
 			<style>.initial-search-box:hover, .initial-search-box:-moz-focusring, .initial-search-box::-moz-focus-inner, .initial-search-box::-moz-focus-outer, .initial-search-box:focus, .initial-search-box:active, .initial-search-box:focus, .initial-search-box:active{outline-color: red}</style>
 			<input type="text" class="initial-search-box" name="contentSearch" style="border-radius: 3px; vertical-align: middle; width: 290px; outline-color: red; font-size: 1em; padding: 8px 2px;" />
 			<button class="btn btn-danger" type="submit" style="padding: 10px 15px; outline-color: red; color: #fff; background-color: #d9534f;	border-color: #d43f3a; font-size: 14px;	font-weight: 400; border: 1px solid transparent; border-radius: 4px; line-height: 1.42857143;"><span class="glyphicon glyphicon-search"></span> Search</button>
 		</form>
-
+		{% include 'encyclopedia/loader.html' %}
 	</div>
 </body>
 
